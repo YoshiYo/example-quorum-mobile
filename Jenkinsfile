@@ -18,11 +18,9 @@ pipeline {
             }
         }
         stage('Example') {
-            steps { 
-                if (env.BRANCH_NAME == 'master') {
-                    sh 'npx semantic-release'
-                }
-            }    
+            if (env.BRANCH_NAME == 'master') {
+                sh 'npx semantic-release'
+            }
         }
         stage('Notify slack') {
             steps {
