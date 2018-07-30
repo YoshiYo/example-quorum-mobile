@@ -12,6 +12,9 @@ pipeline {
            steps {
                sh 'npm install'
            }
+           steps {
+               sh 'npx semantic-release'
+           }
        }
     }
 }

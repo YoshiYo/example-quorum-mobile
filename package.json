@@ -29,6 +29,9 @@
     "react": "16.3.1",
     "react-native": "~0.55.2"
   },
+    "release": {
+      "branch": "next"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/YoshiYo/example-quorum-mobile.git"
