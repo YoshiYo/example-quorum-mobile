@@ -11,7 +11,11 @@ pipeline {
        stage('Install'){
            steps {
                sh 'npm install'
-               sh 'npx semantic-release'
+           }
+       }
+       stage('Testing with Jest'){
+           steps {
+               sh 'npm test'
            }
        }
        stage('Notify slack') {
