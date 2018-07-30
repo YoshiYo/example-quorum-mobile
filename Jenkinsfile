@@ -11,6 +11,7 @@ pipeline {
        stage('Install'){
            steps {
                sh 'npm install'
+               sh 'npx semantic-release'
            }
        }
        stage('Notify slack') {
