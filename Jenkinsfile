@@ -17,8 +17,11 @@ pipeline {
                 sh 'npm install'     
             }
         }
-        stage('Example') {
-            if (env.BRANCH_NAME == 'master') {
+        stage('Changelog creation') {
+            when {
+                branch 'master'
+            }
+            steps {
                 sh 'npx semantic-release'
             }
         }
