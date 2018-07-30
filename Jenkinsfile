@@ -16,9 +16,16 @@ pipeline {
            steps {
                sh 'npm install'     
            }
-           if(env.BRANCH_NAME=='master'){
+       }
+       stage('Semantic release'){
+           when {
+               expression {
+                   env.BRANCH_NAME=='master'
+               }
+               steps{
                    sh 'npx semantic-release'
-            }
+               }   
+           }
        }
        stage('Notify slack') {
             steps {
