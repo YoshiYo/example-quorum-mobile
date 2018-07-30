@@ -2,7 +2,7 @@ pipeline {
    agent {
        docker { image 'node:10' }
    }
-   environnement {
+   environment {
        GH_TOKEN = credentials('jenkins_github_token_yoshiyo')
        NPM_TOKEN = credentials('jenkins_npm_token_guillaume')
    }
