@@ -7,24 +7,23 @@ pipeline {
        NPM_TOKEN = credentials('jenkins_npm_token_guillaume')
    }
    stages {
-       stage('Test') {
+        stage('Test') {
            steps {
                sh 'node --version'
            }
-       }
-       stage('Install'){
-           steps {
-               sh 'npm install'     
-           }
-       }
-       stage('Example') {
+        }
+        stage('Install'){
+            steps {
+                sh 'npm install'     
+            }
+        }
+        stage('Example') {
             if (env.BRANCH_NAME == 'master') {
                 sh 'npx semantic-release'
             }
         }
-       stage('Notify slack') {
+        stage('Notify slack') {
                 slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
-            }
         }
     }
 }
