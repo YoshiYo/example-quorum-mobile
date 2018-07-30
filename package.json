@@ -6,8 +6,13 @@
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
     "detox": "^8.1.1",
+    "detox-expo-helpers": "^0.2.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.4",
     "husky": "^0.14.3",
     "jest-expo": "~27.0.0",
+    "react-dom": "^16.4.1",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
     "semantic-release": "^15.9.1"
@@ -20,10 +25,13 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "semantic-release": "semantic-release",
-    "commitmsg": "commitlint -E GIT_PARAMS"
+    "commitmsg": "commitlint -E GIT_PARAMS",
+    "e2e": "detox test --configuration ios.sim"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native",
+    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
+    "testRegex": "./__tests__/.*.js$"
   },
   "dependencies": {
     "expo": "^27.0.1",
@@ -39,6 +47,7 @@
   },
   "detox": {
     "test-runner": "jest",
+    "runner-config": "__e2e__/config.json",
     "specs": "e2e",
     "configurations": {
       "ios.sim": {
@@ -47,8 +56,8 @@
         "name": "iPhone 7"
       },
       "ios.sim.debug": {
-        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/testing-react-e2e.app",
-        "build": "xcodebuild -project ios/testing-react-e2e.xcodeproj -scheme testing-react-e2e -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/quorum-mobile.app",
+        "build": "xcodebuild -project ios/quorum-mobile.xcodeproj -scheme quorum-mobile -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
         "type": "ios.simulator",
         "name": "iPhone 7"
       }
