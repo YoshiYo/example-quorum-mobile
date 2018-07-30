@@ -17,18 +17,12 @@ pipeline {
                sh 'npm install'     
            }
        }
-       stage('Semantic release'){
-           when {
-               expression {
-                   env.BRANCH_NAME=='master'
-               }
-               steps{
-                   sh 'npx semantic-release'
-               }   
-           }
-       }
+       stage('Example') {
+            if (env.BRANCH_NAME == 'master') {
+                sh 'npx semantic-release'
+            }
+        }
        stage('Notify slack') {
-            steps {
                 slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
             }
         }
