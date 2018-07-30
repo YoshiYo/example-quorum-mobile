@@ -1,5 +1,14 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+   "name": "Quorum",
+   "version": "1.0.0",
+   "slug": "quorum",
+   "sdkVersion": "27.0.0",
+   "ios": {
+     "bundleIdentifier": "co.quorum.mobile"
+   },
+   "android": {
+     "package": "co.quorum.mobile"
+   }
   }
 }
