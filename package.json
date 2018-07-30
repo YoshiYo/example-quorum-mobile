@@ -30,7 +30,7 @@
     "react-native": "~0.55.2"
   },
     "release": {
-      "branch": "next"
+      "branch": "master"
   },
   "repository": {
     "type": "git",
