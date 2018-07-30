@@ -13,5 +13,10 @@ pipeline {
                sh 'npm install'
            }
        }
+       stage('Notify slack') {
+            steps {
+                slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
+            }
+        }
     }
 }
