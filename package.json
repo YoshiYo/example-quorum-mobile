@@ -15,8 +15,7 @@
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "jest",
-    "commitmsg": "commitlint -E GIT_PARAMS"
+    "test": "jest"
   },
   "jest": {
     "preset": "jest-expo"
