@@ -11,8 +11,18 @@ pipeline {
            steps {
                sh 'node --version'
            }
-        }
-        stage('Install'){
+       }
+       stage('Install'){
+           steps {
+               sh 'npm install'
+           }
+       }
+       stage('Testing with Jest'){
+           steps {
+               sh 'npm test'
+           }
+       }
+       stage('Notify slack') {
             steps {
                 sh 'npm install'     
             }
