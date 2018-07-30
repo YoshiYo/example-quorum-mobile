@@ -3,6 +3,8 @@
 # expo
 .expo/
 
+/bin
+
 # dependencies
 /node_modules
 
