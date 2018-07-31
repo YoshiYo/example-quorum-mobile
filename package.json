@@ -13,30 +13,41 @@
     "husky": "^0.14.3",
     "jest-expo": "~27.0.0",
     "react-dom": "^16.4.1",
+    "react-native-debugger-open": "^0.3.17",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1",
+    "redux-devtools-extension": "^2.13.5",
     "semantic-release": "^15.9.1"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
     "start": "react-native-scripts start",
+    "start:debug": "rndebugger-open --open --expo && npm start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
     "test": "jest",
     "semantic-release": "semantic-release",
     "commitmsg": "commitlint -E GIT_PARAMS",
-    "e2e": "detox test --configuration ios.sim"
+    "e2e": "detox test --configuration ios.sim",
+    "postinstall": "rndebugger-open"
   },
   "jest": {
     "preset": "react-native",
     "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
-    "testRegex": "./__tests__/.*.js$"
+    "testRegex": "./__tests__/.*.js$",
+    "globals": {
+      "window": true
+    }
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "expo": "^27.0.1",
     "react": "16.3.1",
-    "react-native": "~0.55.2"
+    "react-native": "~0.55.2",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-axios-middleware": "^4.0.0"
   },
   "release": {
     "branch": "master"

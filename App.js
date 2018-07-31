@@ -1,14 +1,26 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import { Provider } from 'react-redux';
+import store from './src/_store/index';
+import Welcome from './src/_containers/welcome/welcome';
+import Header from './src/components/header/header';
 
 export default class App extends React.Component {
+
   render() {
+
+    console.log('APP');
+
     return (
-      <View testID="welcome" style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      // Adding a store to give data to the app
+      // It comes from reducers
+      // Provider function envelopp the Global App
+      <Provider store={store}>
+        <View style={styles.container}>
+          <Header />
+          <Welcome />
+        </View>
+      </Provider>
     );
   }
 }
@@ -16,8 +28,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });

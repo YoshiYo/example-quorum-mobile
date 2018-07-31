@@ -35,10 +35,5 @@ pipeline {
                 sh 'npx semantic-release'
             }
         }
-        stage('Notify slack') {
-            steps {
-                slackSend color: "#439FE0", message: "Build Started: ${env.JOB_NAME} ${env.BUILD_NUMBER}"
-            }        
-        }
     }
 }

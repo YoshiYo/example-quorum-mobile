@@ -1,37 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Homepage rendered Render the homepage and watch changes 1`] = `
-<Component
-  style={
+<Provider
+  store={
     Object {
-      "alignItems": "center",
-      "backgroundColor": "#fff",
-      "flex": 1,
-      "justifyContent": "center",
+      "@@observable": [Function],
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
     }
   }
-  testID="welcome"
 >
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
+  <Component
+    style={
+      Object {
+        "backgroundColor": "#fff",
+        "flex": 1,
+        "flexDirection": "column",
+      }
+    }
   >
-    Open up App.js to start working on your app!
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
-    Changes you make will automatically reload.
-  </Text>
-  <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
-  >
-    Shake your phone to open the developer menu.
-  </Text>
-</Component>
+    <Header />
+    <Connect(Welcome) />
+  </Component>
+</Provider>
 `;
