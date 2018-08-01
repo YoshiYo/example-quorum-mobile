@@ -9,6 +9,9 @@
 # dependencies
 /node_modules
 
+vscode
+.vscode/
+
 # misc
 .env
 .env.local
