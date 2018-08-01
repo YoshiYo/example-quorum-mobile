@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hender rendered Render the header and watch changes 1`] = `
+<Component
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#5353DE",
+      "flex": 1,
+      "height": 100,
+      "justifyContent": "center",
+      "padding": 50,
+    }
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "color": "#FFF",
+        "fontSize": 20,
+      }
+    }
+  >
+    Welcome on Quorum
+  </Text>
+</Component>
+`;
