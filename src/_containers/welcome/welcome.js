@@ -4,7 +4,7 @@ import { WELCOME_ONBOARDING_MESSAGE } from '../../_actions/index';
 
 const mapStateProps = (state) => {
   const stateForStore = {
-    welcome_message: state.welcome.welcome_message,
+    welcomeMessage: state.welcome.welcome_message,
   };
   return stateForStore;
 };

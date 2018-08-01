@@ -9,7 +9,7 @@ exports[`Hender rendered Render the header and watch changes 1`] = `
       "flex": 1,
       "height": 100,
       "justifyContent": "center",
-      "padding": 40,
+      "padding": 50,
     }
   }
 >
