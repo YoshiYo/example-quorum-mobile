@@ -19,7 +19,7 @@ pipeline {
        }
        stage('Testing with Jest'){
            steps {
-               sh 'npm test-with-coverage'
+               sh 'npm run test-with-coverage'
            }
        }
         stage('Changelog creation') {
