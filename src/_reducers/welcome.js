@@ -1,7 +1,7 @@
-import { WELCOME_ONBOARDING_MESSAGE } from '../_actions/index';
+import { WELCOME_ONBOARDING_MESSAGE } from '../_actions/constants';
 
 const initialState = {
-  welcome_message: 'Welcome',
+  welcomeMessage: 'Welcome',
 };
 
 export default (state = initialState, action) => {
@@ -9,7 +9,7 @@ export default (state = initialState, action) => {
     case WELCOME_ONBOARDING_MESSAGE: {
       return {
         ...state,
-        welcome_message: 'Welcome Greg',
+        welcomeMessage: 'Welcome Greg',
       };
     }
 

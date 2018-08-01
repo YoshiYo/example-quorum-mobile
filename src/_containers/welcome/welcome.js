@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import Welcome from '../../components/welcome/welcome';
-import { WELCOME_ONBOARDING_MESSAGE } from '../../_actions/index';
+import * as actions from '../../_actions/WelcomeActions';
 
 const mapStateProps = (state) => {
   const stateForStore = {
-    welcomeMessage: state.welcome.welcome_message,
+    welcomeMessage: state.welcome.welcomeMessage,
   };
   return stateForStore;
 };
@@ -12,9 +12,7 @@ const mapStateProps = (state) => {
 const mapDispatchProps = (dispatch) => {
   const functionsForStore = {
     initTheWelcomeMessage: () => {
-      dispatch({
-        type: WELCOME_ONBOARDING_MESSAGE,
-      });
+      dispatch(actions.welcomeMessage());
     },
   };
   return functionsForStore;
