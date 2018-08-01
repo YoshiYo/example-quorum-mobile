@@ -1,16 +1,20 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
 import store from './src/_store/index';
 import Welcome from './src/_containers/welcome/welcome';
 import Header from './src/components/header/header';
 
-export default class App extends React.Component {
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: '#fff',
+  },
+});
 
+class App extends Component {
   render() {
-
-    console.log('APP');
-
     return (
       // Adding a store to give data to the app
       // It comes from reducers
@@ -25,10 +29,4 @@ export default class App extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    backgroundColor: '#fff',
-  },
-});
+export default App;
