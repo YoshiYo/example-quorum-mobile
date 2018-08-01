@@ -5,11 +5,17 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "codacy-coverage": "^3.0.0",
     "detox": "^8.1.1",
     "detox-expo-helpers": "^0.2.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-to-json": "^3.3.4",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "17.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.9.1",
     "husky": "^0.14.3",
     "jest-expo": "~27.0.0",
     "react-dom": "^16.4.1",
@@ -30,6 +36,7 @@
     "semantic-release": "semantic-release",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "e2e": "detox test --configuration ios.sim",
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --token b17bfafc2dbb472882692da7d6fb3e66",
     "postinstall": "rndebugger-open"
   },
   "jest": {
