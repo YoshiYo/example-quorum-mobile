@@ -19,14 +19,9 @@ pipeline {
        }
        stage('Testing with Jest'){
            steps {
-               sh 'npm test'
+               sh 'npm test-with-coverage'
            }
        }
-       stage('Notify slack') {
-            steps {
-                sh 'npm install'     
-            }
-        }
         stage('Changelog creation') {
             when {
                 branch 'master'
