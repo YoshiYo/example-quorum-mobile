@@ -5,6 +5,7 @@
   "devDependencies": {
     "@commitlint/cli": "^7.0.0",
     "@commitlint/config-conventional": "^7.0.1",
+    "codacy-coverage": "^3.0.0",
     "detox": "^8.1.1",
     "detox-expo-helpers": "^0.2.0",
     "enzyme": "^3.3.0",
@@ -35,6 +36,7 @@
     "semantic-release": "semantic-release",
     "commitmsg": "commitlint -E GIT_PARAMS",
     "e2e": "detox test --configuration ios.sim",
+    "test-with-coverage": "jest --coverage && cat ./coverage/lcov.info | codacy-coverage --token b17bfafc2dbb472882692da7d6fb3e66",
     "postinstall": "rndebugger-open"
   },
   "jest": {
