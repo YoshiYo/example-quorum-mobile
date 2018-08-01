@@ -12,15 +12,11 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Homepage rendered', () => {
   it('Render the homepage and watch changes', () => {
-    const wrapper = shallow(
-      <App />,
-    );
+    const wrapper = shallow(<App />);
     expect(toJson(wrapper)).toMatchSnapshot();
   });
   it('Render an Header', () => {
-    const wrapper = shallow(
-      <App />,
-    );
+    const wrapper = shallow(<App />);
     expect(wrapper.find(Header));
   });
 });
