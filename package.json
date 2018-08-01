@@ -43,7 +43,6 @@
   },
   "jest": {
     "preset": "react-native",
-    "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js",
     "testRegex": "./__tests__/.*.js$",
     "globals": {
       "window": true
