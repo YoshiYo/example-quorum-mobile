@@ -3474,6 +3474,10 @@ eventemitter3@^3.0.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-3.1.0.tgz#090b4d6cdbd645ed10bf750d4b5407942d7ba163"
 
+ex-react-native-i18n@^0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/ex-react-native-i18n/-/ex-react-native-i18n-0.0.4.tgz#a6685f87652880b6a7e5a6b7c81c40253a81103f"
+
 exception-formatter@^1.0.4:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/exception-formatter/-/exception-formatter-1.0.7.tgz#3291616b86fceabefa97aee6a4708032c6e3b96d"
