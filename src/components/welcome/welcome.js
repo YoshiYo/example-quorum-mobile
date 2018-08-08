@@ -19,6 +19,7 @@ export default class Welcome extends Component {
 
   render() {
     const { welcomeMessage } = this.props;
+    const { text } = this.props;
 
     return (
       <View testID="welcome" style={styles.container}>
@@ -32,7 +33,7 @@ export default class Welcome extends Component {
           Shake your phone to open the developer menu.
         </Text>
         <Text>
-          {welcomeMessage}
+          {`${text.hello} ${welcomeMessage} !`}
         </Text>
       </View>
     );

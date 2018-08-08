@@ -3,6 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import I18n from 'ex-react-native-i18n';
 import Welcome from '../_containers/welcome/welcome';
 import Header from './/header/header';
+import languages from '../../static/lang/index';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,22 +25,20 @@ class App extends Component {
       // I persist the store on a regular basis, and load it here at app startup
       // load assets and fonts here...
     ]);
-    
     this.props.setupI18n(I18n);
+    I18n.fallbacks = true
     this.setState({appIsReady: true }); // when all above promises above are resolved
   }
 
   render() {
 
     //console.log(I18n);
-    console.log(this.props);
 
-    if (!this.state.appIsReady) {
-      <View style={styles.container}>
-        <Header />
-          <Text>{I18n.t('greeting')}</Text>
-        <Welcome />
-      </View>
+    if (!this.props.langReady) {
+      return(
+        <View style={styles.container}>
+        </View>
+      )
     }
     return (
       // Adding a store to give data to the app
@@ -47,25 +46,14 @@ class App extends Component {
       // Provider function envelopp the Global App
         <View style={styles.container}>
           <Header />
-            <Text>{I18n.t('greeting.test')}</Text>
           <Welcome />
         </View>
     );
   }
 }
 
-I18n.fallbacks = true
 I18n.translations = {
-  en: {
-    greeting: {
-      test: 'Hello!'
-    }
-  },
-  fr: {
-    greeting: {
-      test: 'Bonjour !'
-    }
-  }
+  ...languages
 };
 
 export default App;
