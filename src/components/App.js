@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import I18n from 'ex-react-native-i18n';
+import PropTypes from 'prop-types';
 import Welcome from '../_containers/welcome/welcome';
-import Header from './/header/header';
+import Header from './header/header';
 import languages from '../../static/lang/index';
 
 const styles = StyleSheet.create({
@@ -13,47 +14,40 @@ const styles = StyleSheet.create({
   },
 });
 
+I18n.translations = {
+  ...languages,
+};
+
 class App extends Component {
-
-  state = {
-    appIsReady: false,
-  };
-
   async componentWillMount() {
-    const [initI18n] = await Promise.all([
-      I18n.initAsync(),
-      // I persist the store on a regular basis, and load it here at app startup
-      // load assets and fonts here...
-    ]);
-    this.props.setupI18n(I18n);
-    I18n.fallbacks = true
-    this.setState({appIsReady: true }); // when all above promises above are resolved
+    const { setupI18n } = this.props;
+    I18n.initAsync();
+    I18n.fallbacks = true;
+    setupI18n(I18n);
   }
 
   render() {
+    const { langReady } = this.props;
 
-    //console.log(I18n);
-
-    if (!this.props.langReady) {
-      return(
-        <View style={styles.container}>
-        </View>
-      )
+    if (!langReady) {
+      return (
+        <View style={styles.container} />
+      );
     }
     return (
       // Adding a store to give data to the app
       // It comes from reducers
       // Provider function envelopp the Global App
-        <View style={styles.container}>
-          <Header />
-          <Welcome />
-        </View>
+      <View style={styles.container}>
+        <Header />
+        <Welcome />
+      </View>
     );
   }
 }
 
-I18n.translations = {
-  ...languages
+App.propTypes = {
+  langReady: PropTypes.bool.isRequired,
 };
 
 export default App;

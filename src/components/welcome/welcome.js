@@ -42,5 +42,6 @@ export default class Welcome extends Component {
 
 Welcome.propTypes = {
   welcomeMessage: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   initTheWelcomeMessage: PropTypes.func.isRequired,
 };

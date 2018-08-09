@@ -21,9 +21,9 @@ export default (state = initialState, action) => {
       }
       return {
         ...state,
-        I18n: I18n,
+        I18n,
         langReady: true,
-        currentLang: currentLang,
+        currentLang,
       };
     }
 
