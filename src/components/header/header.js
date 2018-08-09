@@ -21,7 +21,7 @@ export default class Header extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.text}>
-          Welcome on Quorum
+          Welcome on Quorum !!!
         </Text>
       </View>
     );

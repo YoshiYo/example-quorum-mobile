@@ -24,7 +24,7 @@ exports[`Hender rendered Render the header and watch changes 1`] = `
       }
     }
   >
-    Welcome on Quorum
+    Welcome on Quorum !!!
   </Text>
 </Component>
 `;

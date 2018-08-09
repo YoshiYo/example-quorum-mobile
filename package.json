@@ -46,7 +46,15 @@
     "testRegex": "./__tests__/.*.js$",
     "globals": {
       "window": true
-    }
+    },
+    "coverageReporters": [
+      "html",
+      "text",
+      "cobertura"
+    ],
+    "collectCoverageFrom": [
+     "src/**/*.js"
+   ]
   },
   "dependencies": {
     "axios": "^0.18.0",
