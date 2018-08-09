@@ -1,5 +1,6 @@
 import { createStore, combineReducers } from 'redux';
 import welcome from '../_reducers/welcome';
+import setup from '../_reducers/setup';
 
 // eslint-disable-next-line
 const REDUX_DEV_TOOL = () => { 
@@ -8,6 +9,7 @@ const REDUX_DEV_TOOL = () => {
 };
 
 const store = createStore(combineReducers({
+  setup,
   welcome,
 }), REDUX_DEV_TOOL());
 

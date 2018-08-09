@@ -5,6 +5,7 @@ import * as actions from '../../_actions/SetupActions';
 const mapStateProps = (state) => {
   const stateForStore = {
     I18n: state.setup.I18n,
+    langReady: state.setup.langReady,
   };
   return stateForStore;
 };

@@ -5,6 +5,7 @@ import * as actions from '../../_actions/WelcomeActions';
 const mapStateProps = (state) => {
   const stateForStore = {
     welcomeMessage: state.welcome.welcomeMessage,
+    text: state.setup.currentLang.greeting,
   };
   return stateForStore;
 };

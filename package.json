@@ -27,7 +27,7 @@
     "redux-mock-store": "^1.5.3",
     "semantic-release": "^15.9.1"
   },
-  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "main": "./index.js",
   "scripts": {
     "start": "react-native-scripts start",
     "start:debug": "rndebugger-open --open --expo && npm start",
@@ -50,6 +50,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "ex-react-native-i18n": "^0.0.4",
     "expo": "^27.0.1",
     "prop-types": "^15.6.2",
     "react": "16.3.1",
