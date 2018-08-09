@@ -42,6 +42,6 @@ export default class Welcome extends Component {
 
 Welcome.propTypes = {
   welcomeMessage: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.object.isRequired, // eslint-disable-line react/forbid-prop-types
   initTheWelcomeMessage: PropTypes.func.isRequired,
 };
